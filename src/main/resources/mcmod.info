@@ -1,0 +1,16 @@
+[
+{
+  "modid": "babyanimals",
+  "name": "Baby Animals Model Swapper",
+  "description": "Replaces vanilla baby models with models created for the original Baby Animals Mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/2364027",
+  "updateUrl": "",
+  "authorList": ["MrIbby", "cocoavalley"],
+  "credits": "cocoavalley for releasing the source code",
+  "logoFile": "assets/babyanimals/textures/gui/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
