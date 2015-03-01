@@ -2,10 +2,12 @@ package com.outlook.siribby.babyanimals;
 
 import com.outlook.siribby.babyanimals.model.*;
 import com.outlook.siribby.babyanimals.renderer.*;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.passive.*;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 @Mod(modid = BabyAnimals.MOD_ID, name = "Baby Animals Model Swapper", version = "@VERSION@")
 public class BabyAnimals {
@@ -15,13 +17,14 @@ public class BabyAnimals {
 //    private boolean isRendering;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(EntityPig.class, new RenderNewPig(new ModelNewPig(), new ModelNewPig(0.5F), 0.7F));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySheep.class, new RenderNewSheep(new ModelNewSheep2(), new ModelNewSheep1(), 0.7F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityCow.class, new RenderNewCow(new ModelNewCow(), 0.7F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityMooshroom.class, new RenderNewMooshroom(new ModelNewCow(), 0.7F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityWolf.class, new RenderNewWolf(new ModelNewWolf(), new ModelNewWolf(), 0.5F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityChicken.class, new RenderNewChicken(new ModelNewChicken(), 0.3F));
+    public void init(FMLInitializationEvent event) {
+        RenderManager renderManager = FMLClientHandler.instance().getClient().getRenderManager();
+        RenderingRegistry.registerEntityRenderingHandler(EntityPig.class, new RenderNewPig(renderManager, new ModelNewPig(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySheep.class, new RenderNewSheep(renderManager, new ModelNewSheep2(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityCow.class, new RenderNewCow(renderManager, new ModelNewCow(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityMooshroom.class, new RenderNewMooshroom(renderManager, new ModelNewCow(), 0.7F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityWolf.class, new RenderNewWolf(renderManager, new ModelNewWolf(), 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityChicken.class, new RenderNewChicken(renderManager, new ModelNewChicken(), 0.3F));
 
 //        FMLCommonHandler.instance().bus().register(this);
 //        MinecraftForge.EVENT_BUS.register(this);

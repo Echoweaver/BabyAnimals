@@ -17,13 +17,14 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-1"
+version = "1.8"
 group = "com.outlook.siribby.babyanimals"
 archivesBaseName = "BabyAnimals"
 
 minecraft {
-    version = "1.7.10-10.13.2.1291"
+    version = "1.8-11.14.0.1299"
     runDir = "run"
+    mappings = "snapshot_nodoc_20141130"
     replaceIn "BabyAnimals.java"
     replace "@VERSION@", project.version
 }

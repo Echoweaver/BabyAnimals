@@ -3,22 +3,23 @@ package com.outlook.siribby.babyanimals.renderer;
 import com.outlook.siribby.babyanimals.BabyAnimals;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderChicken;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderNewChicken extends RenderChicken {
     public static final ResourceLocation CHICK_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/chicken.png");
 
-    public RenderNewChicken(ModelBase modelBase, float par2) {
-        super(modelBase, par2);
+    public RenderNewChicken(RenderManager renderManager, ModelBase modelBase, float par2) {
+        super(renderManager, modelBase, par2);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityChicken entityChicken) {
+    protected ResourceLocation func_180568_a(EntityChicken entityChicken) {
         if (entityChicken.isChild()) {
             return CHICK_TEXTURES;
         }
 
-        return super.getEntityTexture(entityChicken);
+        return super.func_180568_a(entityChicken);
     }
 }

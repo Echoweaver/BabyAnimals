@@ -1,8 +1,8 @@
 package com.outlook.siribby.babyanimals.core;
 
 import com.outlook.siribby.babyanimals.BabyAnimals;
-import cpw.mods.fml.common.asm.transformers.AccessTransformer;
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.common.asm.transformers.AccessTransformer;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.io.IOException;
 import java.util.Map;
