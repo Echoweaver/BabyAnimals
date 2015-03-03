@@ -67,63 +67,44 @@ public class ModelNewWolf extends ModelWolf {
 
     @Override
     public void setLivingAnimations(EntityLivingBase entityLivingBase, float par2, float par3, float par4) {
-        EntityWolf entityWolf = (EntityWolf) entityLivingBase;
+        super.setLivingAnimations(entityLivingBase, par2, par3, par4);
 
-        if (entityWolf.isAngry()) {
-            wolfTail.rotateAngleY = puppyTail.rotateAngleY = 0.0F;
-        } else {
-            wolfTail.rotateAngleY = puppyTail.rotateAngleY = MathHelper.cos(par2 * 0.6662F) * 1.4F * par3;
-        }
+        EntityWolf entityWolf = (EntityWolf) entityLivingBase;
+        puppyTail.rotateAngleY = wolfTail.rotateAngleY;
 
         if (entityWolf.isSitting()) {
-            wolfMane.setRotationPoint(-1.0F, 16.0F, -3.0F);
             puppyRuff.setRotationPoint(0.0F, 18.5F, -0F);
-            wolfMane.rotateAngleX = ((float) Math.PI * 2F / 5F);
-            wolfMane.rotateAngleY = 0.0F;
-            wolfBody.setRotationPoint(0.0F, 18.0F, 0.0F);
             puppyBody.setRotationPoint(0.0F, 20F, 0.0F);
-            wolfBody.rotateAngleX = puppyBody.rotateAngleX = ((float) Math.PI / 4F);
-            wolfTail.setRotationPoint(-1.0F, 21.0F, 6.0F);
+            puppyBody.rotateAngleX = wolfBody.rotateAngleX;
             puppyTail.setRotationPoint(0.0F, 22.0F, 3.0F);
-            wolfLeg1.setRotationPoint(-2.5F, 22.0F, 2.0F);
             puppyLeg1.setRotationPoint(-1.5F, 22F, 1.0F);
-            wolfLeg1.rotateAngleX = puppyLeg1.rotateAngleX = ((float) Math.PI * 3F / 2F);
-            wolfLeg2.setRotationPoint(0.5F, 22.0F, 2.0F);
+            puppyLeg1.rotateAngleX = wolfLeg1.rotateAngleX;
             puppyLeg2.setRotationPoint(1.5F, 22F, 1.0F);
-            wolfLeg2.rotateAngleX = puppyLeg2.rotateAngleX = ((float) Math.PI * 3F / 2F);
-            wolfLeg3.rotateAngleX = puppyLeg3.rotateAngleX = 5.811947F;
-            wolfLeg3.setRotationPoint(-2.49F, 17.0F, -4.0F);
+            puppyLeg2.rotateAngleX = wolfLeg2.rotateAngleX;
+            puppyLeg3.rotateAngleX = wolfLeg3.rotateAngleX;
             puppyLeg3.setRotationPoint(-1.5F, 19F, -3F);
-            wolfLeg4.rotateAngleX = puppyLeg4.rotateAngleX = 5.811947F;
-            wolfLeg4.setRotationPoint(0.51F, 17.0F, -4.0F);
+            puppyLeg4.rotateAngleX = wolfLeg4.rotateAngleX;
             puppyLeg4.setRotationPoint(1.51F, 19F, -3F);
         } else {
-            wolfBody.setRotationPoint(0.0F, 14.0F, 2.0F);
             puppyBody.setRotationPoint(0.0F, 17F, 0.0F);
-            wolfBody.rotateAngleX = puppyBody.rotateAngleX = ((float) Math.PI / 2F);
-            wolfMane.setRotationPoint(-1.0F, 14.0F, -3.0F);
+            puppyBody.rotateAngleX = wolfBody.rotateAngleX;
             puppyRuff.setRotationPoint(0.0F, 17F, 0.0F);
-            wolfMane.rotateAngleX = puppyRuff.rotateAngleX = wolfBody.rotateAngleX;
-            wolfTail.setRotationPoint(-1.0F, 12.0F, 8.0F);
-            wolfLeg1.setRotationPoint(-2.5F, 16.0F, 7.0F);
-            wolfLeg2.setRotationPoint(0.5F, 16.0F, 7.0F);
-            wolfLeg3.setRotationPoint(-2.5F, 16.0F, -4.0F);
-            wolfLeg4.setRotationPoint(0.5F, 16.0F, -4.0F);
+            puppyRuff.rotateAngleX = wolfMane.rotateAngleX;
             puppyTail.setRotationPoint(0.0F, 15.5F, 4F);
             puppyLeg1.setRotationPoint(-1.5F, 19F, 3F);
             puppyLeg2.setRotationPoint(1.5F, 19F, 3F);
             puppyLeg3.setRotationPoint(-1.5F, 19F, -3F);
             puppyLeg4.setRotationPoint(1.5F, 19F, -3F);
-            wolfLeg1.rotateAngleX = puppyLeg1.rotateAngleX = MathHelper.cos(par2 * 0.6662F) * 1.4F * par3;
-            wolfLeg2.rotateAngleX = puppyLeg2.rotateAngleX = MathHelper.cos(par2 * 0.6662F + (float) Math.PI) * 1.4F * par3;
-            wolfLeg3.rotateAngleX = puppyLeg3.rotateAngleX = MathHelper.cos(par2 * 0.6662F + (float) Math.PI) * 1.4F * par3;
-            wolfLeg4.rotateAngleX = puppyLeg4.rotateAngleX = MathHelper.cos(par2 * 0.6662F) * 1.4F * par3;
+            puppyLeg1.rotateAngleX = wolfLeg1.rotateAngleX;
+            puppyLeg2.rotateAngleX = wolfLeg2.rotateAngleX;
+            puppyLeg3.rotateAngleX = wolfLeg3.rotateAngleX;
+            puppyLeg4.rotateAngleX = wolfLeg4.rotateAngleX;
         }
 
-        wolfHeadMain.rotateAngleZ = puppyHead.rotateAngleZ = entityWolf.getInterestedAngle(par4) + entityWolf.getShakeAngle(par4, 0.0F);
-        wolfMane.rotateAngleZ = puppyRuff.rotateAngleZ = entityWolf.getShakeAngle(par4, -0.08F);
-        wolfBody.rotateAngleZ = puppyBody.rotateAngleZ = entityWolf.getShakeAngle(par4, -0.16F);
-        wolfTail.rotateAngleZ = puppyTail.rotateAngleZ = entityWolf.getShakeAngle(par4, -0.2F);
+        puppyHead.rotateAngleZ = wolfHeadMain.rotateAngleZ;
+        puppyRuff.rotateAngleZ = wolfMane.rotateAngleZ;
+        puppyBody.rotateAngleZ = wolfBody.rotateAngleZ;
+        puppyTail.rotateAngleZ = wolfTail.rotateAngleZ;
     }
 
     @Override
