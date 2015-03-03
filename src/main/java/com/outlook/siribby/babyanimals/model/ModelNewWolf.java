@@ -74,6 +74,7 @@ public class ModelNewWolf extends ModelWolf {
 
         if (entityWolf.isSitting()) {
             puppyRuff.setRotationPoint(0.0F, 18.5F, -0F);
+            puppyRuff.rotateAngleX = wolfMane.rotateAngleX;
             puppyBody.setRotationPoint(0.0F, 20F, 0.0F);
             puppyBody.rotateAngleX = wolfBody.rotateAngleX;
             puppyTail.setRotationPoint(0.0F, 22.0F, 3.0F);
