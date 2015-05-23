@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNewPig extends RenderPig {
     public static final ResourceLocation PIGLET_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/pig.png");
 
-    public RenderNewPig(RenderManager renderManager, ModelBase modelBase, float par3) {
-        super(renderManager, modelBase, par3);
+    public RenderNewPig(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
     }
 
     @Override

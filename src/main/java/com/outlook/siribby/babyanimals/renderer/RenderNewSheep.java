@@ -13,8 +13,8 @@ import java.util.ListIterator;
 public class RenderNewSheep extends RenderSheep {
     public static final ResourceLocation LAMB_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/sheep/sheep.png");
 
-    public RenderNewSheep(RenderManager renderManager, ModelBase modelBase, float par3) {
-        super(renderManager, modelBase, par3);
+    public RenderNewSheep(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
 
         ListIterator layerIterator = layerRenderers.listIterator();
         while (layerIterator.hasNext()) {

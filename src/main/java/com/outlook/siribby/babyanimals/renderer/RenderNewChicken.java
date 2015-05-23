@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNewChicken extends RenderChicken {
     public static final ResourceLocation CHICK_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/chicken.png");
 
-    public RenderNewChicken(RenderManager renderManager, ModelBase modelBase, float par2) {
-        super(renderManager, modelBase, par2);
+    public RenderNewChicken(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
     }
 
     @Override

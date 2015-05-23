@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNewMooshroom extends RenderMooshroom {
     public static final ResourceLocation CALF_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/cow/mooshroom.png");
 
-    public RenderNewMooshroom(RenderManager renderManager, ModelBase modelBase, float par2) {
-        super(renderManager, modelBase, par2);
+    public RenderNewMooshroom(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
     }
 
     @Override

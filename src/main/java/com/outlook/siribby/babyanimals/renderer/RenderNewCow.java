@@ -10,8 +10,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderNewCow extends RenderCow {
     public static final ResourceLocation CALF_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/cow/cow.png");
 
-    public RenderNewCow(RenderManager renderManager, ModelBase modelBase, float par2) {
-        super(renderManager, modelBase, par2);
+    public RenderNewCow(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
     }
 
     @Override

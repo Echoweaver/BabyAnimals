@@ -15,8 +15,8 @@ public class RenderNewWolf extends RenderWolf {
     public static final ResourceLocation TAMED_PUPPY_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/wolf/wolf_tame.png");
     public static final ResourceLocation ANGRY_PUPPY_TEXTURES = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/wolf/wolf_angry.png");
 
-    public RenderNewWolf(RenderManager renderManager, ModelBase modelBase, float par3) {
-        super(renderManager, modelBase, par3);
+    public RenderNewWolf(RenderManager renderManager, ModelBase modelBase, float shadowSize) {
+        super(renderManager, modelBase, shadowSize);
 
         ListIterator layerIterator = layerRenderers.listIterator();
         while (layerIterator.hasNext()) {
