@@ -25,6 +25,7 @@ public class BabyAnimals {
         RenderingRegistry.registerEntityRenderingHandler(EntityMooshroom.class, new RenderNewMooshroom(renderManager, new ModelNewCow(), 0.7F));
         RenderingRegistry.registerEntityRenderingHandler(EntityWolf.class, new RenderNewWolf(renderManager, new ModelNewWolf(), 0.5F));
         RenderingRegistry.registerEntityRenderingHandler(EntityChicken.class, new RenderNewChicken(renderManager, new ModelNewChicken(), 0.3F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRabbit.class, new RenderNewRabbit(renderManager, new ModelNewRabbit(), 0.3F));
 
 //        FMLCommonHandler.instance().bus().register(this);
 //        MinecraftForge.EVENT_BUS.register(this);
