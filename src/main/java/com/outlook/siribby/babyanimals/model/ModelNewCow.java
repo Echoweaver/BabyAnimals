@@ -14,7 +14,7 @@ public class ModelNewCow extends ModelCow {
 
     public ModelNewCow() {
         calfHead = new ModelRenderer(this, 0, 0);
-        calfHead.addBox(-3F, -3F, -3F, 6, 6, 4, 0.0F);
+        calfHead.addBox(-3F, -3F, -3F, 6, 6, 4, -0.1F);
         calfHead.setRotationPoint(0.0F, 10F, -4F);
         calfHead.setTextureOffset(17, 0).addBox(-3.5F, -4F, -2F, 1, 2, 1, 0.0F);
         calfHead.setTextureOffset(17, 0).addBox(2.5F, -4F, -2F, 1, 2, 1, 0.0F);
