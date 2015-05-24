@@ -42,7 +42,7 @@ public class ModelNewRabbit extends ModelRabbit {
         bunnyBody.addBox(-1.5F, -1.5F, -3F, 3, 3, 5);
         bunnyBody.setRotationPoint(0F, 21F, 0F);
         bunnyBody.mirror = true;
-        setRotationOffset(bunnyBody, -0.3F, 0F, 0F);
+        setRotationOffset(bunnyBody, -0.35F, 0F, 0F);
         bunnyLeftArm = new ModelRenderer(this, 0, 2);
         bunnyLeftArm.addBox(-0.5F, -1.5F, -0.75F, 1, 3, 1);
         bunnyLeftArm.setRotationPoint(1.5F, 22.5F, -2.75F);
@@ -52,22 +52,22 @@ public class ModelNewRabbit extends ModelRabbit {
         bunnyRightArm.setRotationPoint(-1.5F, 22.5F, -2.75F);
         bunnyRightArm.mirror = true;
         bunnyHead = new ModelRenderer(this, 12, 0);
-        bunnyHead.addBox(-1.5F, -0.25F, -2F, 3, 3, 3, -0.1F);
+        bunnyHead.addBox(-1.5F, -0.5F, -2F, 3, 3, 3, -0.1F);
         bunnyHead.setRotationPoint(0F, 18F, -3.5F);
         bunnyHead.mirror = true;
         bunnyRightEar = new ModelRenderer(this, 24, 0);
-        bunnyRightEar.addBox(-1.3F, -2F, -0.5F, 1, 3, 1);
+        bunnyRightEar.addBox(-1.3F, -2.25F, -0.5F, 1, 3, 1);
         bunnyRightEar.setRotationPoint(0F, 18F, -3.5F);
         bunnyRightEar.mirror = true;
         bunnyLeftEar = new ModelRenderer(this, 28, 0);
-        bunnyLeftEar.addBox(0.3F, -2F, -0.5F, 1, 3, 1);
+        bunnyLeftEar.addBox(0.3F, -2.25F, -0.5F, 1, 3, 1);
         bunnyLeftEar.setRotationPoint(0F, 18F, -3.5F);
         bunnyLeftEar.mirror = true;
         bunnyTail = new ModelRenderer(this, 24, 4);
         bunnyTail.addBox(-0.5F, -0.5F, -0.5F, 1, 1, 1, 0.2F);
         bunnyTail.setRotationPoint(0F, 22F, 2F);
         bunnyTail.mirror = true;
-        setRotationOffset(bunnyTail, -0.175F, 0F, 0F);
+        setRotationOffset(bunnyTail, -0.35F, 0F, 0F);
     }
 
     @Override
