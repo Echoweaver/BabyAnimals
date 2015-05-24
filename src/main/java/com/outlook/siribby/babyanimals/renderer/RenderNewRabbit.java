@@ -28,7 +28,7 @@ public class RenderNewRabbit extends RenderRabbit {
             String name = EnumChatFormatting.getTextWithoutFormattingCodes(rabbit.getCommandSenderName());
 
             if (name != null && name.equals("Toast")) {
-                //return TOAST;
+                return TOAST;
             } else {
                 switch (rabbit.getRabbitType()) {
                     case 0:
@@ -38,8 +38,8 @@ public class RenderNewRabbit extends RenderRabbit {
                         return WHITE;
                     case 2:
                         return BLACK;
-                    /*case 3:
-                        return WHITE_SPLOTCHED;*/
+                    case 3:
+                        return WHITE_SPLOTCHED;
                     case 4:
                         return GOLD;
                     case 5:
