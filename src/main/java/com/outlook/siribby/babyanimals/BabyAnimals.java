@@ -4,6 +4,7 @@ import com.outlook.siribby.babyanimals.model.*;
 import com.outlook.siribby.babyanimals.renderer.*;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.entity.passive.*;
 
@@ -25,6 +26,11 @@ public class BabyAnimals {
 
 //        FMLCommonHandler.instance().bus().register(this);
 //        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        BabyAnimalsCompat.addModCompatibility();
     }
 
 //    @SubscribeEvent
