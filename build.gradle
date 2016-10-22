@@ -11,20 +11,20 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
 
-apply plugin: 'forge'
+apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.8-2"
-group = "com.outlook.siribby.babyanimals"
+version = "1.8.9"
+group = "io.github.mribby.babyanimals"
 archivesBaseName = "BabyAnimals"
 
 minecraft {
-    version = "1.8-11.14.1.1334"
+    version = "1.8.9-11.15.1.1722"
     runDir = "run"
-    mappings = "snapshot_20150529"
+    mappings = "stable_20"
     replaceIn "BabyAnimals.java"
     replace "@VERSION@", project.version
 }
