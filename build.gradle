@@ -45,6 +45,6 @@ processResources {
 
 jar {
     manifest {
-        attributes 'FMLCorePlugin': 'com.outlook.siribby.babyanimals.core.BabyAnimalsCore', 'FMLCorePluginContainsFMLMod': 'true'
+        attributes 'FMLAT': 'babyanimals_at.cfg'
     }
 }
