@@ -15,11 +15,11 @@ public class RenderNewMooshroom extends RenderMooshroom {
     }
 
     @Override
-    protected ResourceLocation func_180582_a(EntityMooshroom entityMooshroom) {
+    protected ResourceLocation getEntityTexture(EntityMooshroom entityMooshroom) {
         if (entityMooshroom.isChild()) {
             return CALF_TEXTURES;
         }
 
-        return super.func_180582_a(entityMooshroom);
+        return super.getEntityTexture(entityMooshroom);
     }
 }

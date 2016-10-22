@@ -19,7 +19,7 @@ public class LayerNewWolfCollar extends LayerWolfCollar {
     }
 
     @Override
-    public void func_177145_a(EntityWolf entityWolf, float par2, float par3, float par4, float par5, float par6, float par7, float par8) {
+    public void doRenderLayer(EntityWolf entityWolf, float par2, float par3, float par4, float par5, float par6, float par7, float par8) {
         if (entityWolf.isChild()) {
             if (entityWolf.isTamed() && !entityWolf.isInvisible()) {
                 renderWolf.bindTexture(PUPPY_COLLAR_TEXTURES);
@@ -29,7 +29,7 @@ public class LayerNewWolfCollar extends LayerWolfCollar {
                 renderWolf.getMainModel().render(entityWolf, par2, par3, par5, par6, par7, par8);
             }
         } else {
-            super.func_177145_a(entityWolf, par2, par3, par4, par5, par6, par7, par8);
+            super.doRenderLayer(entityWolf, par2, par3, par4, par5, par6, par7, par8);
         }
     }
 }

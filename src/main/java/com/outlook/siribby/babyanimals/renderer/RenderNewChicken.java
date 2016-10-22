@@ -15,11 +15,11 @@ public class RenderNewChicken extends RenderChicken {
     }
 
     @Override
-    protected ResourceLocation func_180568_a(EntityChicken entityChicken) {
+    protected ResourceLocation getEntityTexture(EntityChicken entityChicken) {
         if (entityChicken.isChild()) {
             return CHICK_TEXTURES;
         }
 
-        return super.func_180568_a(entityChicken);
+        return super.getEntityTexture(entityChicken);
     }
 }

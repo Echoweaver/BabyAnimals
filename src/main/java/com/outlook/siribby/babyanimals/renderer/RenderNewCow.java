@@ -15,11 +15,11 @@ public class RenderNewCow extends RenderCow {
     }
 
     @Override
-    protected ResourceLocation func_180572_a(EntityCow entityCow) {
+    protected ResourceLocation getEntityTexture(EntityCow entityCow) {
         if (entityCow.isChild()) {
             return CALF_TEXTURES;
         }
 
-        return super.func_180572_a(entityCow);
+        return super.getEntityTexture(entityCow);
     }
 }

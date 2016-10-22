@@ -23,9 +23,9 @@ public class RenderNewRabbit extends RenderRabbit {
     }
 
     @Override
-    protected ResourceLocation func_177125_a(EntityRabbit rabbit) {
+    protected ResourceLocation getEntityTexture(EntityRabbit rabbit) {
         if (rabbit.isChild()) {
-            String name = EnumChatFormatting.getTextWithoutFormattingCodes(rabbit.getCommandSenderName());
+            String name = EnumChatFormatting.getTextWithoutFormattingCodes(rabbit.getName());
 
             if (name != null && name.equals("Toast")) {
                 return TOAST;
@@ -50,6 +50,6 @@ public class RenderNewRabbit extends RenderRabbit {
             }
         }
 
-        return super.func_177125_a(rabbit);
+        return super.getEntityTexture(rabbit);
     }
 }

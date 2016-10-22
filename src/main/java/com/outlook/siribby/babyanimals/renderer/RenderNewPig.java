@@ -15,11 +15,11 @@ public class RenderNewPig extends RenderPig {
     }
 
     @Override
-    protected ResourceLocation func_180583_a(EntityPig entityPig) {
+    protected ResourceLocation getEntityTexture(EntityPig entityPig) {
         if (entityPig.isChild()) {
             return PIGLET_TEXTURES;
         }
 
-        return super.func_180583_a(entityPig);
+        return super.getEntityTexture(entityPig);
     }
 }
