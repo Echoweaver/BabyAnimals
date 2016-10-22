@@ -5,7 +5,6 @@ import net.minecraft.client.model.ModelWolf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityWolf;
-import net.minecraft.util.MathHelper;
 
 public class ModelNewWolf extends ModelWolf {
     public final ModelRenderer puppyHead;

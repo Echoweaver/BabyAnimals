@@ -20,32 +20,32 @@ public class LayerNewSheepWool extends LayerSheepWool {
     }
 
     @Override
-    public void doRenderLayer(EntitySheep entitySheep, float par2, float par3, float par4, float par5, float par6, float par7, float par8) {
+    public void doRenderLayer(EntitySheep entitySheep, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         if (entitySheep.isChild()) {
             if (!entitySheep.getSheared() && !entitySheep.isInvisible()) {
                 renderSheep.bindTexture(LAMB_FUR_TEXTURES);
 
                 if (entitySheep.hasCustomName() && "jeb_".equals(entitySheep.getCustomNameTag())) {
-                    boolean flag = true;
+                    int i1 = 25;
                     int i = entitySheep.ticksExisted / 25 + entitySheep.getEntityId();
                     int j = EnumDyeColor.values().length;
                     int k = i % j;
                     int l = (i + 1) % j;
-                    float f7 = ((float) (entitySheep.ticksExisted % 25) + par4) / 25.0F;
-                    float[] afloat1 = EntitySheep.func_175513_a(EnumDyeColor.byMetadata(k));
-                    float[] afloat2 = EntitySheep.func_175513_a(EnumDyeColor.byMetadata(l));
-                    GlStateManager.color(afloat1[0] * (1.0F - f7) + afloat2[0] * f7, afloat1[1] * (1.0F - f7) + afloat2[1] * f7, afloat1[2] * (1.0F - f7) + afloat2[2] * f7);
+                    float f = ((float) (entitySheep.ticksExisted % 25) + partialTicks) / 25.0F;
+                    float[] afloat1 = EntitySheep.getDyeRgb(EnumDyeColor.byMetadata(k));
+                    float[] afloat2 = EntitySheep.getDyeRgb(EnumDyeColor.byMetadata(l));
+                    GlStateManager.color(afloat1[0] * (1.0F - f) + afloat2[0] * f, afloat1[1] * (1.0F - f) + afloat2[1] * f, afloat1[2] * (1.0F - f) + afloat2[2] * f);
                 } else {
-                    float[] afloat = EntitySheep.func_175513_a(entitySheep.getFleeceColor());
+                    float[] afloat = EntitySheep.getDyeRgb(entitySheep.getFleeceColor());
                     GlStateManager.color(afloat[0], afloat[1], afloat[2]);
                 }
 
                 modelSheep.setModelAttributes(renderSheep.getMainModel());
-                modelSheep.setLivingAnimations(entitySheep, par2, par3, par4);
-                modelSheep.render(entitySheep, par2, par3, par5, par6, par7, par8);
+                modelSheep.setLivingAnimations(entitySheep, limbSwing, limbSwingAmount, ageInTicks);
+                modelSheep.render(entitySheep, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             }
         } else {
-            super.doRenderLayer(entitySheep, par2, par3, par4, par5, par6, par7, par8);
+            super.doRenderLayer(entitySheep, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale);
         }
     }
 }

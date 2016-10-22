@@ -19,17 +19,17 @@ public class LayerNewWolfCollar extends LayerWolfCollar {
     }
 
     @Override
-    public void doRenderLayer(EntityWolf entityWolf, float par2, float par3, float par4, float par5, float par6, float par7, float par8) {
+    public void doRenderLayer(EntityWolf entityWolf, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         if (entityWolf.isChild()) {
             if (entityWolf.isTamed() && !entityWolf.isInvisible()) {
                 renderWolf.bindTexture(PUPPY_COLLAR_TEXTURES);
                 EnumDyeColor dyeColor = EnumDyeColor.byMetadata(entityWolf.getCollarColor().getMetadata());
-                float[] colors = EntitySheep.func_175513_a(dyeColor);
+                float[] colors = EntitySheep.getDyeRgb(dyeColor);
                 GlStateManager.color(colors[0], colors[1], colors[2]);
-                renderWolf.getMainModel().render(entityWolf, par2, par3, par5, par6, par7, par8);
+                renderWolf.getMainModel().render(entityWolf, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             }
         } else {
-            super.doRenderLayer(entityWolf, par2, par3, par4, par5, par6, par7, par8);
+            super.doRenderLayer(entityWolf, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale);
         }
     }
 }

@@ -5,8 +5,8 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderRabbit;
 import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderNewRabbit extends RenderRabbit {
     public static final ResourceLocation BROWN = new ResourceLocation(BabyAnimals.MOD_ID, "textures/entity/rabbit/brown.png");
@@ -25,7 +25,7 @@ public class RenderNewRabbit extends RenderRabbit {
     @Override
     protected ResourceLocation getEntityTexture(EntityRabbit rabbit) {
         if (rabbit.isChild()) {
-            String name = EnumChatFormatting.getTextWithoutFormattingCodes(rabbit.getName());
+            String name = TextFormatting.getTextWithoutFormattingCodes(rabbit.getName());
 
             if (name != null && name.equals("Toast")) {
                 return TOAST;

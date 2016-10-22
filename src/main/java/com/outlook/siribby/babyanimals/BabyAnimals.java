@@ -2,8 +2,8 @@ package com.outlook.siribby.babyanimals;
 
 import com.outlook.siribby.babyanimals.model.*;
 import com.outlook.siribby.babyanimals.renderer.*;
+import net.minecraft.client.renderer.entity.RenderLivingBase;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RendererLivingEntity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.*;
 import net.minecraftforge.client.event.RenderLivingEvent;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 @Mod(modid = BabyAnimals.MOD_ID, name = "Baby Animals Model Swapper", version = "@VERSION@", acceptedMinecraftVersions = "*")
 public class BabyAnimals {
     public static final String MOD_ID = "babyanimals";
-    public static final HashMap<Class<? extends EntityLivingBase>, RendererLivingEntity> ENTITY_RENDER_MAP = new HashMap<Class<? extends EntityLivingBase>, RendererLivingEntity>();
+    public static final HashMap<Class<? extends EntityLivingBase>, RenderLivingBase> ENTITY_RENDER_MAP = new HashMap<Class<? extends EntityLivingBase>, RenderLivingBase>();
     private float renderTickTime;
     private boolean isRendering;
 
@@ -47,14 +47,14 @@ public class BabyAnimals {
     @SubscribeEvent
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
         if (!isRendering) {
-            EntityLivingBase entity = event.entity;
+            EntityLivingBase entity = event.getEntity();
 
             if (entity.isChild()) {
-                RendererLivingEntity renderer = ENTITY_RENDER_MAP.get(entity.getClass());
+                RenderLivingBase renderer = ENTITY_RENDER_MAP.get(entity.getClass());
 
                 if (renderer != null) {
                     isRendering = true;
-                    renderer.doRender(entity, event.x, event.y, event.z, 0.0F, renderTickTime);
+                    renderer.doRender(entity, event.getX(), event.getY(), event.getZ(), 0.0F, renderTickTime);
                     isRendering = false;
                     event.setCanceled(true);
                 }
