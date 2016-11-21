@@ -1,10 +1,10 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelRabbit;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelNewRabbit extends ModelRabbit {
+public class ModelBunny extends ModelRabbit {
     public final ModelRenderer bunnyLeftFoot;
     public final ModelRenderer bunnyRightFoot;
     public final ModelRenderer bunnyLeftThigh;
@@ -17,7 +17,7 @@ public class ModelNewRabbit extends ModelRabbit {
     public final ModelRenderer bunnyLeftEar;
     public final ModelRenderer bunnyTail;
 
-    public ModelNewRabbit() {
+    public ModelBunny() {
         textureWidth = 32;
 
         bunnyLeftFoot = new ModelRenderer(this, 0, 6);
@@ -71,29 +71,25 @@ public class ModelNewRabbit extends ModelRabbit {
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        if (isChild) {
-            setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
 
-            bunnyHead.render(f5);
-            bunnyBody.render(f5);
-            bunnyLeftThigh.render(f5);
-            bunnyRightThigh.render(f5);
-            bunnyRightArm.render(f5);
-            bunnyLeftArm.render(f5);
-            bunnyLeftFoot.render(f5);
-            bunnyRightFoot.render(f5);
-            bunnyTail.render(f5);
-            bunnyRightEar.render(f5);
-            bunnyLeftEar.render(f5);
-        } else {
-            super.render(entity, f, f1, f2, f3, f4, f5);
-        }
+        bunnyHead.render(scale);
+        bunnyBody.render(scale);
+        bunnyLeftThigh.render(scale);
+        bunnyRightThigh.render(scale);
+        bunnyRightArm.render(scale);
+        bunnyLeftArm.render(scale);
+        bunnyLeftFoot.render(scale);
+        bunnyRightFoot.render(scale);
+        bunnyTail.render(scale);
+        bunnyRightEar.render(scale);
+        bunnyLeftEar.render(scale);
     }
 
     @Override
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         bunnyHead.rotateAngleX = rabbitHead.rotateAngleX;
         bunnyHead.rotateAngleY = rabbitHead.rotateAngleY;
         bunnyRightEar.rotateAngleX = rabbitRightEar.rotateAngleX;

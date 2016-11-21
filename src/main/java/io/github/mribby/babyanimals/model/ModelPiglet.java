@@ -1,10 +1,10 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelNewPig extends ModelPig {
+public class ModelPiglet extends ModelPig {
     public final ModelRenderer pigletHead;
     public final ModelRenderer pigletBody;
     public final ModelRenderer pigletLeg1;
@@ -12,11 +12,11 @@ public class ModelNewPig extends ModelPig {
     public final ModelRenderer pigletLeg3;
     public final ModelRenderer pigletLeg4;
 
-    public ModelNewPig() {
+    public ModelPiglet() {
         this(0.0F);
     }
 
-    public ModelNewPig(float par1) {
+    public ModelPiglet(float par1) {
         super(par1);
 
         pigletHead = new ModelRenderer(this, 0, 0);
@@ -40,24 +40,20 @@ public class ModelNewPig extends ModelPig {
     }
 
     @Override
-    public void render(Entity entity, float par2, float par3, float par4, float par5, float par6, float par7) {
-        if (isChild) {
-            setRotationAngles(par2, par3, par4, par5, par6, par7, entity);
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
 
-            pigletHead.render(par7);
-            pigletBody.render(par7);
-            pigletLeg1.render(par7);
-            pigletLeg2.render(par7);
-            pigletLeg3.render(par7);
-            pigletLeg4.render(par7);
-        } else {
-            super.render(entity, par2, par3, par4, par5, par6, par7);
-        }
+        pigletHead.render(scale);
+        pigletBody.render(scale);
+        pigletLeg1.render(scale);
+        pigletLeg2.render(scale);
+        pigletLeg3.render(scale);
+        pigletLeg4.render(scale);
     }
 
     @Override
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity) {
-        super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         pigletHead.rotateAngleX = head.rotateAngleX;
         pigletHead.rotateAngleY = head.rotateAngleY;
         pigletBody.rotateAngleX = body.rotateAngleX;

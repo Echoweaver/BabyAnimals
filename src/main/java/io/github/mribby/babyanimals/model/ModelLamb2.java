@@ -1,10 +1,10 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.model.ModelSheep2;
 import net.minecraft.entity.Entity;
 
-public class ModelNewSheep2 extends ModelSheep2 {
+public class ModelLamb2 extends ModelSheep2 {
     public final ModelRenderer lambHead;
     public final ModelRenderer lambBody;
     public final ModelRenderer lambLeg1;
@@ -12,7 +12,7 @@ public class ModelNewSheep2 extends ModelSheep2 {
     public final ModelRenderer lambLeg3;
     public final ModelRenderer lambLeg4;
 
-    public ModelNewSheep2() {
+    public ModelLamb2() {
         lambHead = new ModelRenderer(this, 0, 0);
         lambHead.addBox(-3F, -2.5F, -3F, 6, 5, 4, 0.0F);
         lambHead.setRotationPoint(0.0F, 13F, -4F);
@@ -34,24 +34,20 @@ public class ModelNewSheep2 extends ModelSheep2 {
     }
 
     @Override
-    public void render(Entity entity, float par2, float par3, float par4, float par5, float par6, float par7) {
-        if (isChild) {
-            setRotationAngles(par2, par3, par4, par5, par6, par7, entity);
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
 
-            lambHead.render(par7);
-            lambBody.render(par7);
-            lambLeg1.render(par7);
-            lambLeg2.render(par7);
-            lambLeg3.render(par7);
-            lambLeg4.render(par7);
-        } else {
-            super.render(entity, par2, par3, par4, par5, par6, par7);
-        }
+        lambHead.render(scale);
+        lambBody.render(scale);
+        lambLeg1.render(scale);
+        lambLeg2.render(scale);
+        lambLeg3.render(scale);
+        lambLeg4.render(scale);
     }
 
     @Override
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity) {
-        super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         lambHead.rotateAngleX = head.rotateAngleX;
         lambHead.rotateAngleY = head.rotateAngleY;
         lambBody.rotateAngleX = body.rotateAngleX;

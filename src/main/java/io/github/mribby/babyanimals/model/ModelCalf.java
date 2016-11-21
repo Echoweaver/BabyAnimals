@@ -1,10 +1,10 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelCow;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelNewCow extends ModelCow {
+public class ModelCalf extends ModelCow {
     public final ModelRenderer calfHead;
     public final ModelRenderer calfBody;
     public final ModelRenderer calfLeg1;
@@ -12,7 +12,7 @@ public class ModelNewCow extends ModelCow {
     public final ModelRenderer calfLeg3;
     public final ModelRenderer calfLeg4;
 
-    public ModelNewCow() {
+    public ModelCalf() {
         calfHead = new ModelRenderer(this, 0, 0);
         calfHead.addBox(-3F, -3F, -3F, 6, 6, 4, -0.1F);
         calfHead.setRotationPoint(0.0F, 10F, -4F);
@@ -36,24 +36,20 @@ public class ModelNewCow extends ModelCow {
     }
 
     @Override
-    public void render(Entity entity, float par2, float par3, float par4, float par5, float par6, float par7) {
-        if (isChild) {
-            setRotationAngles(par2, par3, par4, par5, par6, par7, entity);
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
 
-            calfHead.render(par7);
-            calfBody.render(par7);
-            calfLeg1.render(par7);
-            calfLeg2.render(par7);
-            calfLeg3.render(par7);
-            calfLeg4.render(par7);
-        } else {
-            super.render(entity, par2, par3, par4, par5, par6, par7);
-        }
+        calfHead.render(scale);
+        calfBody.render(scale);
+        calfLeg1.render(scale);
+        calfLeg2.render(scale);
+        calfLeg3.render(scale);
+        calfLeg4.render(scale);
     }
 
     @Override
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity) {
-        super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         calfHead.rotateAngleX = head.rotateAngleX;
         calfHead.rotateAngleY = head.rotateAngleY;
         calfBody.rotateAngleX = body.rotateAngleX;

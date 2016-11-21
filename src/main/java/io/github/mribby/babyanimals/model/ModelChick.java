@@ -1,17 +1,17 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelNewChicken extends ModelChicken {
+public class ModelChick extends ModelChicken {
     public final ModelRenderer chickHead;
     public final ModelRenderer chickBill;
     public final ModelRenderer chickBody;
     public final ModelRenderer chickRightLeg;
     public final ModelRenderer chickLeftLeg;
 
-    public ModelNewChicken() {
+    public ModelChick() {
         chickHead = new ModelRenderer(this, 0, 0);
         chickHead.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.0F);
         chickHead.setRotationPoint(0.0F, 18F, -2.5F);
@@ -30,23 +30,19 @@ public class ModelNewChicken extends ModelChicken {
     }
 
     @Override
-    public void render(Entity entity, float par2, float par3, float par4, float par5, float par6, float par7) {
-        if (isChild) {
-            setRotationAngles(par2, par3, par4, par5, par6, par7, entity);
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
 
-            chickHead.render(par7);
-            chickBill.render(par7);
-            chickBody.render(par7);
-            chickRightLeg.render(par7);
-            chickLeftLeg.render(par7);
-        } else {
-            super.render(entity, par2, par3, par4, par5, par6, par7);
-        }
+        chickHead.render(scale);
+        chickBill.render(scale);
+        chickBody.render(scale);
+        chickRightLeg.render(scale);
+        chickLeftLeg.render(scale);
     }
 
     @Override
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity) {
-        super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         chickHead.rotateAngleX = head.rotateAngleX;
         chickHead.rotateAngleY = head.rotateAngleY;
         chickBill.rotateAngleX = bill.rotateAngleX;
