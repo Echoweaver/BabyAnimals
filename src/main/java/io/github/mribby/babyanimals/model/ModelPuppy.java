@@ -1,4 +1,4 @@
-package com.outlook.siribby.babyanimals.model;
+package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.model.ModelWolf;
@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityWolf;
 
-public class ModelNewWolf extends ModelWolf {
+public class ModelPuppy extends ModelWolf {
     public final ModelRenderer puppyHead;
     public final ModelRenderer puppyBody;
     public final ModelRenderer puppyRuff;
@@ -16,7 +16,7 @@ public class ModelNewWolf extends ModelWolf {
     public final ModelRenderer puppyLeg4;
     public final ModelRenderer puppyTail;
 
-    public ModelNewWolf() {
+    public ModelPuppy() {
         puppyHead = new ModelRenderer(this, 0, 0);
         puppyHead.addBox(-2.5F, -2F, -4F, 5, 4, 4, 0.0F);
         puppyHead.setRotationPoint(0.0F, 17F, -4F);
@@ -47,31 +47,26 @@ public class ModelNewWolf extends ModelWolf {
     }
 
     @Override
-    public void render(Entity entity, float par2, float par3, float par4, float par5, float par6, float par7) {
-        if (isChild) {
-            setRotationAngles(par2, par3, par4, par5, par6, par7, entity);
-
-            puppyHead.renderWithRotation(par7);
-            puppyBody.render(par7);
-            puppyLeg1.render(par7);
-            puppyLeg2.render(par7);
-            puppyLeg3.render(par7);
-            puppyLeg4.render(par7);
-            puppyTail.renderWithRotation(par7);
-            puppyRuff.render(par7);
-        } else {
-            super.render(entity, par2, par3, par4, par5, par6, par7);
-        }
+    public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
+        puppyHead.renderWithRotation(scale);
+        puppyBody.render(scale);
+        puppyLeg1.render(scale);
+        puppyLeg2.render(scale);
+        puppyLeg3.render(scale);
+        puppyLeg4.render(scale);
+        puppyTail.renderWithRotation(scale);
+        puppyRuff.render(scale);
     }
 
     @Override
-    public void setLivingAnimations(EntityLivingBase entityLivingBase, float par2, float par3, float par4) {
-        super.setLivingAnimations(entityLivingBase, par2, par3, par4);
+    public void setLivingAnimations(EntityLivingBase entityLivingBase, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        super.setLivingAnimations(entityLivingBase, limbSwing, limbSwingAmount, partialTickTime);
 
-        EntityWolf entityWolf = (EntityWolf) entityLivingBase;
         puppyTail.rotateAngleY = wolfTail.rotateAngleY;
 
-        if (entityWolf.isSitting()) {
+        EntityWolf puppyEntity = (EntityWolf) entityLivingBase;
+        if (puppyEntity.isSitting()) {
             puppyRuff.setRotationPoint(0.0F, 18.5F, -0F);
             puppyRuff.rotateAngleX = wolfMane.rotateAngleX;
             puppyBody.setRotationPoint(0.0F, 20F, 0.0F);
@@ -108,8 +103,8 @@ public class ModelNewWolf extends ModelWolf {
     }
 
     @Override
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity) {
-        super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entity);
         puppyHead.rotateAngleX = wolfHeadMain.rotateAngleX;
         puppyHead.rotateAngleY = wolfHeadMain.rotateAngleY;
         puppyTail.rotateAngleX = wolfTail.rotateAngleX;
