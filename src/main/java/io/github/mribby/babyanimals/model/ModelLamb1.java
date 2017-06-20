@@ -36,7 +36,6 @@ public class ModelLamb1 extends ModelSheep1 {
     @Override
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-
         lambHead.render(scale);
         lambBody.render(scale);
         lambLeg1.render(scale);

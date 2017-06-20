@@ -38,7 +38,6 @@ public class ModelCalf extends ModelCow {
     @Override
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-
         calfHead.render(scale);
         calfBody.render(scale);
         calfLeg1.render(scale);

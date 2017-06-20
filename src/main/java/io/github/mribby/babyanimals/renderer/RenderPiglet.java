@@ -8,7 +8,7 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPiglet extends RenderPig {
-    public static final ResourceLocation PIGLET_TEXTURES = new ResourceLocation(BabyAnimalsMod.ID, "textures/entity/pig.png");
+    public static final ResourceLocation PIGLET_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/pig.png");
 
     public RenderPiglet(RenderManager renderManager) {
         super(renderManager);

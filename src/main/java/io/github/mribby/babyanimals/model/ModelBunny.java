@@ -2,6 +2,7 @@ package io.github.mribby.babyanimals.model;
 
 import net.minecraft.client.model.ModelRabbit;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelBunny extends ModelRabbit {
@@ -19,61 +20,69 @@ public class ModelBunny extends ModelRabbit {
 
     public ModelBunny() {
         textureWidth = 32;
-
         bunnyLeftFoot = new ModelRenderer(this, 0, 6);
-        bunnyLeftFoot.addBox(-0.5F, 1F, -2.5F, 1, 1, 3);
-        bunnyLeftFoot.setRotationPoint(1.5F, 22F, 1F);
+        bunnyLeftFoot.addBox(-0.5F, 2.3F, -1.9F, 1, 1, 3, 0.0F);
+        bunnyLeftFoot.setRotationPoint(1.5F, 20.7F, 0.4F);
         bunnyLeftFoot.mirror = true;
+        setRotationOffset(bunnyLeftFoot, 0.0F, 0.0F, 0.0F);
         bunnyRightFoot = new ModelRenderer(this, 0, 10);
-        bunnyRightFoot.addBox(0F, 1F, -2.5F, 1, 1, 3);
-        bunnyRightFoot.setRotationPoint(-2F, 22F, 1F);
+        bunnyRightFoot.addBox(-0.5F, 2.3F, -1.9F, 1, 1, 3, 0.0F);
+        bunnyRightFoot.setRotationPoint(-1.5F, 20.7F, 0.4F);
         bunnyRightFoot.mirror = true;
+        setRotationOffset(bunnyRightFoot, 0.0F, 0.0F, 0.0F);
         bunnyLeftThigh = new ModelRenderer(this, 6, 14);
-        bunnyLeftThigh.addBox(-0.5F, -1F, -1F, 1, 2, 2);
-        bunnyLeftThigh.setRotationPoint(1.5F, 22F, 1F);
+        bunnyLeftThigh.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 2, 0.0F);
+        bunnyLeftThigh.setRotationPoint(1.5F, 20.7F, 0.4F);
         bunnyLeftThigh.mirror = true;
-        setRotationOffset(bunnyLeftThigh, -0.175F, 0F, 0F);
+        setRotationOffset(bunnyLeftThigh, -0.34906584F, 0.0F, 0.0F);
         bunnyRightThigh = new ModelRenderer(this, 0, 14);
-        bunnyRightThigh.addBox(0F, -1F, -1F, 1, 2, 2);
-        bunnyRightThigh.setRotationPoint(-2F, 22F, 1F);
+        bunnyRightThigh.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 2, 0.0F);
+        bunnyRightThigh.setRotationPoint(-1.5F, 20.7F, 0.4F);
         bunnyRightThigh.mirror = true;
-        setRotationOffset(bunnyRightThigh, -0.175F, 0F, 0F);
+        setRotationOffset(bunnyRightThigh, -0.34906584F, 0.0F, 0.0F);
         bunnyBody = new ModelRenderer(this, 8, 6);
-        bunnyBody.addBox(-1.5F, -1.5F, -3F, 3, 3, 5);
-        bunnyBody.setRotationPoint(0F, 21F, 0F);
+        bunnyBody.addBox(-1.5F, -1.2F, -5.0F, 3, 3, 5, 0.0F);
+        bunnyBody.setRotationPoint(0.0F, 21.4F, 2.0F);
         bunnyBody.mirror = true;
-        setRotationOffset(bunnyBody, -0.35F, 0F, 0F);
+        setRotationOffset(bunnyBody, -0.34906584F, 0.0F, 0.0F);
         bunnyLeftArm = new ModelRenderer(this, 0, 2);
-        bunnyLeftArm.addBox(-0.5F, -1.5F, -0.75F, 1, 3, 1);
-        bunnyLeftArm.setRotationPoint(1.5F, 22.5F, -2.75F);
+        bunnyLeftArm.addBox(-0.5F, 0.0F, -0.5F, 1, 3, 1, 0.0F);
+        bunnyLeftArm.setRotationPoint(1.5F, 21.0F, -2.7F);
         bunnyLeftArm.mirror = true;
+        setRotationOffset(bunnyLeftArm, -0.17453292F, 0.0F, 0.0F);
         bunnyRightArm = new ModelRenderer(this, 4, 2);
-        bunnyRightArm.addBox(-0.5F, -1.5F, -0.75F, 1, 3, 1);
-        bunnyRightArm.setRotationPoint(-1.5F, 22.5F, -2.75F);
+        bunnyRightArm.addBox(-0.5F, 0.0F, -0.5F, 1, 3, 1, 0.0F);
+        bunnyRightArm.setRotationPoint(-1.5F, 21.0F, -2.7F);
         bunnyRightArm.mirror = true;
+        setRotationOffset(bunnyRightArm, -0.17453292F, 0.0F, 0.0F);
         bunnyHead = new ModelRenderer(this, 12, 0);
-        bunnyHead.addBox(-1.5F, -0.5F, -2F, 3, 3, 3, -0.1F);
-        bunnyHead.setRotationPoint(0F, 18F, -3.5F);
+        bunnyHead.addBox(-1.5F, -3.0F, -3.0F, 3, 3, 3, -0.1F);
+        bunnyHead.setRotationPoint(0.0F, 20.5F, -2.5F);
         bunnyHead.mirror = true;
+        setRotationOffset(bunnyHead, 0.0F, 0.0F, 0.0F);
         bunnyRightEar = new ModelRenderer(this, 24, 0);
-        bunnyRightEar.addBox(-1.3F, -2.25F, -0.5F, 1, 3, 1);
-        bunnyRightEar.setRotationPoint(0F, 18F, -3.5F);
+        bunnyRightEar.addBox(-1.5F, -4.75F, -1.5F, 1, 3, 1, 0.0F);
+        bunnyRightEar.setRotationPoint(0.0F, 20.5F, -2.5F);
         bunnyRightEar.mirror = true;
+        setRotationOffset(bunnyRightEar, 0.0F, -0.2617994F, 0.0F);
         bunnyLeftEar = new ModelRenderer(this, 28, 0);
-        bunnyLeftEar.addBox(0.3F, -2.25F, -0.5F, 1, 3, 1);
-        bunnyLeftEar.setRotationPoint(0F, 18F, -3.5F);
+        bunnyLeftEar.addBox(0.5F, -4.75F, -1.5F, 1, 3, 1, 0.0F);
+        bunnyLeftEar.setRotationPoint(0.0F, 20.5F, -2.5F);
         bunnyLeftEar.mirror = true;
+        setRotationOffset(bunnyLeftEar, 0.0F, 0.2617994F, 0.0F);
         bunnyTail = new ModelRenderer(this, 24, 4);
-        bunnyTail.addBox(-0.5F, -0.5F, -0.5F, 1, 1, 1, 0.2F);
-        bunnyTail.setRotationPoint(0F, 22F, 2F);
+        bunnyTail.addBox(-0.5F, -0.7F, 0.0F, 1, 1, 1, 0.2F);
+        bunnyTail.setRotationPoint(0.0F, 22.0F, 1.5F);
         bunnyTail.mirror = true;
-        setRotationOffset(bunnyTail, -0.35F, 0F, 0F);
+        setRotationOffset(bunnyTail, -0.3490659F, 0.0F, 0.0F);
     }
 
     @Override
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-
+        GlStateManager.pushMatrix();
+        GlStateManager.scale(0.8F, 0.8F, 0.8F);
+        GlStateManager.translate(0.0F, 6.0F * scale, 0.0F);
         bunnyHead.render(scale);
         bunnyBody.render(scale);
         bunnyLeftThigh.render(scale);
@@ -85,6 +94,7 @@ public class ModelBunny extends ModelRabbit {
         bunnyTail.render(scale);
         bunnyRightEar.render(scale);
         bunnyLeftEar.render(scale);
+        GlStateManager.popMatrix();
     }
 
     @Override
@@ -104,9 +114,9 @@ public class ModelBunny extends ModelRabbit {
         bunnyRightArm.rotateAngleX = rabbitRightArm.rotateAngleX;
     }
 
-    private void setRotationOffset(ModelRenderer model, float x, float y, float z) {
-        model.rotateAngleX = x;
-        model.rotateAngleY = y;
-        model.rotateAngleZ = z;
+    private void setRotationOffset(ModelRenderer renderer, float x, float y, float z) {
+        renderer.rotateAngleX = x;
+        renderer.rotateAngleY = y;
+        renderer.rotateAngleZ = z;
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMooshroomCalf extends RenderMooshroom {
-    public static final ResourceLocation MOOSHROOM_CALF_TEXTURES = new ResourceLocation(BabyAnimalsMod.ID, "textures/entity/cow/mooshroom.png");
+    public static final ResourceLocation MOOSHROOM_CALF_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cow/mooshroom.png");
 
     public RenderMooshroomCalf(RenderManager renderManager) {
         super(renderManager);

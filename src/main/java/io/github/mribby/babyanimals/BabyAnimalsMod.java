@@ -7,9 +7,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.io.File;
 
-@Mod(modid = BabyAnimalsMod.ID, name = BabyAnimalsMod.NAME, version = BabyAnimalsMod.VERSION, acceptedMinecraftVersions = BabyAnimalsMod.MINECRAFT_VERSIONS, updateJSON = BabyAnimalsMod.UPDATE_JSON_URL)
+@Mod(modid = BabyAnimalsMod.MODID, name = BabyAnimalsMod.NAME, version = BabyAnimalsMod.VERSION, acceptedMinecraftVersions = BabyAnimalsMod.MINECRAFT_VERSIONS, updateJSON = BabyAnimalsMod.UPDATE_JSON_URL)
 public class BabyAnimalsMod {
-    public static final String ID = "babyanimals";
+    public static final String MODID = "babyanimals";
     public static final String NAME = "Baby Animals Model Swapper";
     public static final String VERSION = "@VERSION@";
     public static final String MINECRAFT_VERSIONS = "*";

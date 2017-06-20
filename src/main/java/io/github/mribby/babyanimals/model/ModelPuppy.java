@@ -49,7 +49,6 @@ public class ModelPuppy extends ModelWolf {
     @Override
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-
         puppyHead.renderWithRotation(scale);
         puppyBody.render(scale);
         puppyLeg1.render(scale);
@@ -64,9 +63,9 @@ public class ModelPuppy extends ModelWolf {
     public void setLivingAnimations(EntityLivingBase entity, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entity, limbSwing, limbSwingAmount, partialTickTime);
 
-        EntityWolf puppyEntity = (EntityWolf) entity;
         puppyTail.rotateAngleY = wolfTail.rotateAngleY;
 
+        EntityWolf puppyEntity = (EntityWolf) entity;
         if (puppyEntity.isSitting()) {
             puppyRuff.setRotationPoint(0.0F, 18.5F, -0F);
             puppyRuff.rotateAngleX = wolfMane.rotateAngleX;

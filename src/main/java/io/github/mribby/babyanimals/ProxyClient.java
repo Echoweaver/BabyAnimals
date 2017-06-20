@@ -10,7 +10,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.HashMap;
 
@@ -19,14 +18,14 @@ public class ProxyClient extends Proxy {
 
     private Configuration config;
 
-    private float renderTickTime;
     private boolean isRendering;
+    private boolean forceBabyModels;
 
     @Override
     public void init() {
         config = new Configuration(BabyAnimalsMod.configFile);
-        config.load();
         RenderManager renderManager = FMLClientHandler.instance().getClient().getRenderManager();
+        forceBabyModels = config.get(Configuration.CATEGORY_CLIENT, "forceBabyModels", false).getBoolean();
         registerRenderer(EntityPig.class, "enablePig", new RenderPiglet(renderManager));
         registerRenderer(EntitySheep.class, "enableSheep", new RenderLamb(renderManager));
         registerRenderer(EntityCow.class, "enableCow", new RenderCalf(renderManager));
@@ -34,6 +33,7 @@ public class ProxyClient extends Proxy {
         registerRenderer(EntityWolf.class, "enableWolf", new RenderPuppy(renderManager));
         registerRenderer(EntityChicken.class, "enableChicken", new RenderChick(renderManager));
         registerRenderer(EntityRabbit.class, "enableRabbit", new RenderBunny(renderManager));
+        registerRenderer(EntityOcelot.class, "enableOcelot", new RenderKitten(renderManager));
         config.save();
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -46,23 +46,14 @@ public class ProxyClient extends Proxy {
     }
 
     @SubscribeEvent
-    public void onTick(TickEvent.RenderTickEvent event) {
-        if (event.phase == TickEvent.Phase.START) {
-            renderTickTime = event.renderTickTime;
-        }
-    }
-
-    @SubscribeEvent
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
         if (!isRendering) {
             EntityLivingBase entity = event.getEntity();
-
-            if (entity.isChild()) {
+            if (entity.isChild() || forceBabyModels) {
                 RenderLivingBase renderer = ENTITY_RENDERER_MAP.get(entity.getClass());
-
                 if (renderer != null) {
                     isRendering = true;
-                    renderer.doRender(entity, event.getX(), event.getY(), event.getZ(), 0.0F, renderTickTime);
+                    renderer.doRender(entity, event.getX(), event.getY(), event.getZ(), 0.0F, FMLClientHandler.instance().getClient().getRenderPartialTicks());
                     isRendering = false;
                     event.setCanceled(true);
                 }

@@ -16,9 +16,8 @@ public class ModelPiglet extends ModelPig {
         this(0.0F);
     }
 
-    public ModelPiglet(float par1) {
-        super(par1);
-
+    public ModelPiglet(float scale) {
+        super(scale);
         pigletHead = new ModelRenderer(this, 0, 0);
         pigletHead.addBox(-2.5F, -2F, -3F, 5, 4, 4, 0.0F);
         pigletHead.setRotationPoint(0.0F, 17F, -3F);
@@ -42,7 +41,6 @@ public class ModelPiglet extends ModelPig {
     @Override
     public void render(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entity);
-
         pigletHead.render(scale);
         pigletBody.render(scale);
         pigletLeg1.render(scale);
