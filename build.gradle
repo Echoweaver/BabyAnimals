@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.8.9"
+version = "1.8.9-2"
 group = "io.github.mribby.babyanimals"
 archivesBaseName = "BabyAnimals"
 
@@ -25,7 +25,7 @@ minecraft {
     version = "1.8.9-11.15.1.1722"
     runDir = "run"
     mappings = "stable_20"
-    replaceIn "BabyAnimals.java"
+    replaceIn "BabyAnimalsMod.java"
     replace "@VERSION@", project.version
 }
 
