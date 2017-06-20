@@ -17,14 +17,14 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-3"
-group = "com.outlook.siribby.babyanimals"
+version = "1.7.10-4"
+group = "io.github.mribby.babyanimals"
 archivesBaseName = "BabyAnimals"
 
 minecraft {
-    version = "1.7.10-10.13.4.1448-1.7.10"
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "run"
-    replaceIn "BabyAnimals.java"
+    replaceIn "BabyAnimalsMod.java"
     replace "@VERSION@", project.version
 }
 
@@ -44,6 +44,6 @@ processResources {
 
 jar {
     manifest {
-        attributes 'FMLCorePlugin': 'com.outlook.siribby.babyanimals.core.BabyAnimalsCore', 'FMLCorePluginContainsFMLMod': 'true'
+        attributes 'FMLAT': 'babyanimals_at.cfg'
     }
 }

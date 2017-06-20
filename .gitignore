@@ -2,6 +2,7 @@
 .gradle/
 build/
 eclipse/
+libs/
 run/
 
 ### ECLIPSE ###

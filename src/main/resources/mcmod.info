@@ -2,10 +2,10 @@
 {
   "modid": "babyanimals",
   "name": "Baby Animals Model Swapper",
-  "description": "Replaces vanilla baby models with models created for the original Baby Animals Mod.",
+  "description": "Overrides vanilla baby models with new, cuter models.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/2364027",
+  "url": "https://curseforge.com/projects/227979/",
   "updateUrl": "",
   "authorList": ["MrIbby", "cocoavalley"],
   "credits": "cocoavalley for releasing the source code",
