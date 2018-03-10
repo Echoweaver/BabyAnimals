@@ -9,14 +9,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class RenderBunny extends RenderRabbit {
-    public static final ResourceLocation BROWN = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/brown.png");
-    public static final ResourceLocation WHITE = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/white.png");
-    public static final ResourceLocation BLACK = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/black.png");
-    public static final ResourceLocation GOLD = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/gold.png");
-    public static final ResourceLocation SALT = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/salt.png");
-    public static final ResourceLocation WHITE_SPLOTCHED = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/white_splotched.png");
-    public static final ResourceLocation TOAST = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/toast.png");
-    public static final ResourceLocation CAERBANNOG = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/caerbannog.png");
+    public static final ResourceLocation BROWN = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_brown.png");
+    public static final ResourceLocation WHITE = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_white.png");
+    public static final ResourceLocation BLACK = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_black.png");
+    public static final ResourceLocation GOLD = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_gold.png");
+    public static final ResourceLocation SALT = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_salt.png");
+    public static final ResourceLocation WHITE_SPLOTCHED = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_white_splotched.png");
+    public static final ResourceLocation TOAST = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_toast.png");
+    public static final ResourceLocation CAERBANNOG = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/rabbit/bunny_caerbannog.png");
 
     public RenderBunny(RenderManager renderManager) {
         super(renderManager);

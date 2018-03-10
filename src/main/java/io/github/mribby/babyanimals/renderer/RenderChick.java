@@ -8,7 +8,7 @@ import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderChick extends RenderChicken {
-    public static final ResourceLocation CHICK_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/chicken.png");
+    public static final ResourceLocation CHICK_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/chick.png");
 
     public RenderChick(RenderManager renderManager) {
         super(renderManager);

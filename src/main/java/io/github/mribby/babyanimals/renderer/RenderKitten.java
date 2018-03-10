@@ -8,10 +8,10 @@ import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKitten extends RenderOcelot {
-    public static final ResourceLocation BLACK_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/black.png");
-    public static final ResourceLocation KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/ocelot.png");
-    public static final ResourceLocation RED_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/red.png");
-    public static final ResourceLocation SIAMESE_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/siamese.png");
+    public static final ResourceLocation BLACK_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/kitten_black.png");
+    public static final ResourceLocation KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/kitten_ocelot.png");
+    public static final ResourceLocation RED_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/kitten_red.png");
+    public static final ResourceLocation SIAMESE_KITTEN_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cat/kitten_siamese.png");
 
     public RenderKitten(RenderManager renderManager) {
         super(renderManager);

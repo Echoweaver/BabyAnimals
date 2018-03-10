@@ -8,7 +8,7 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderCalf extends RenderCow {
-    public static final ResourceLocation CALF_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cow/cow.png");
+    public static final ResourceLocation CALF_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/cow/calf.png");
 
     public RenderCalf(RenderManager renderManager) {
         super(renderManager);

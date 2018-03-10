@@ -9,7 +9,7 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.ResourceLocation;
 
 public class LayerLambWool extends LayerSheepWool {
-    public static final ResourceLocation LAMB_FUR_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/sheep/sheep_fur.png");
+    public static final ResourceLocation LAMB_FUR_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/sheep/lamb_fur.png");
     public final RenderLamb lambRenderer;
     public final ModelLamb1 lambModel = new ModelLamb1();
 

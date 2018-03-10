@@ -8,7 +8,7 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.util.ResourceLocation;
 
 public class LayerPuppyCollar extends LayerWolfCollar {
-    public static final ResourceLocation PUPPY_COLLAR_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/wolf_collar.png");
+    public static final ResourceLocation PUPPY_COLLAR_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/puppy_collar.png");
     public final RenderPuppy puppyRenderer;
 
     public LayerPuppyCollar(RenderPuppy puppyRenderer) {

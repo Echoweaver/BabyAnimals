@@ -9,7 +9,7 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLamb extends RenderSheep {
-    public static final ResourceLocation LAMB_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/sheep/sheep.png");
+    public static final ResourceLocation LAMB_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/sheep/lamb.png");
 
     public RenderLamb(RenderManager renderManager) {
         super(renderManager);

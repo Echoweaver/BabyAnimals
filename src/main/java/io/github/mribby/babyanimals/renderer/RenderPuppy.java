@@ -9,9 +9,9 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderPuppy extends RenderWolf {
-    public static final ResourceLocation PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/wolf.png");
-    public static final ResourceLocation TAMED_PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/wolf_tame.png");
-    public static final ResourceLocation ANGRY_PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/wolf_angry.png");
+    public static final ResourceLocation PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/puppy.png");
+    public static final ResourceLocation TAMED_PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/puppy_tame.png");
+    public static final ResourceLocation ANGRY_PUPPY_TEXTURES = new ResourceLocation(BabyAnimalsMod.MODID, "textures/entity/wolf/puppy_angry.png");
 
     public RenderPuppy(RenderManager renderManager) {
         super(renderManager);
